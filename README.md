@@ -56,3 +56,43 @@ Verify in PostgreSQL:
 SELECT COUNT(*) FROM reviews;
 SELECT bank_id, COUNT(*) FROM reviews GROUP BY bank_id;
 SELECT bank_id, AVG(rating) FROM reviews GROUP BY bank_id;
+
+Task 4: App Review Insights and Recommendations
+
+This task analyzes user reviews for three banks’ mobile apps (Abyssinia Bank, Commercial Bank of Ethiopia, Dashen Bank) to derive insights and actionable recommendations.
+
+Key Steps
+
+Load and process reviews: Using reviews_processed.csv.
+
+Sentiment analysis: Each review is labeled as positive, neutral, or negative using TextBlob.
+
+Sentiment summary: Calculates proportion of each sentiment per bank.
+
+Drivers and pain points:
+
+Top 2 drivers: aspects users liked most (positive/neutral sentiment).
+
+Top 2 pain points: aspects with negative feedback.
+
+Visualizations:
+
+Sentiment proportion per bank (plots/sentiment_per_bank.png)
+
+Rating distribution per bank (plots/rating_distribution.png)
+
+Recommendations: Suggested improvements for each bank based on drivers and pain points.
+
+How to Run
+python scripts/task4_analysis.py
+
+
+Plots will be saved in the plots folder.
+
+Recommendations and sentiment summaries are printed in the terminal.
+
+Notes
+
+Reviews may be biased: negative feedback is often overrepresented.
+
+Currently, the analysis is sentiment-based only, without feature-level themes. Adding themes can provide more granular insights.
